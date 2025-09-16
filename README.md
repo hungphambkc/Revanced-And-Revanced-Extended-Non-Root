@@ -279,9 +279,10 @@ Web version:
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
-| Stable version                                                         | Beta version                                                                |
-| ---------------------------------------------------------------------- | --------------------------------------------------------------------------- | 
-| [All Architectures](../../releases/download/all/twitch-revanced.apk)   | [All Architectures](../../releases/download/all/twitch-beta-revanced.apk)   |
+| Stable version                                                           | Beta version                                                                   |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | 
+| [All Architectures](../../releases/download/all/twitch-revanced.apk)     | [All Architectures](../../releases/download/all/twitch-beta-revanced.apk)      |
+| [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-revanced.apk)   | [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-beta-revanced.apk )   |
 
 ---
 
@@ -398,6 +399,15 @@ Web version:
 
 ---
 
+
+### [Solid Explorer File Manager](https://play.google.com/store/apps/details?id=pl.solidexplorer2)
+
+### [scrazzz](https://github.com/scrazzz/my-revanced-patches)
+
+[Arm64-v8a](../../releases/download/all/solid-explorer-arm64-v8a-scrazzz.apk )
+
+---
+
 ### [Nova Launcher:](https://play.google.com/store/apps/details?id=com.teslacoilsw.launcher)
 
 ### [Dropped Patches by indrastorms:](https://github.com/indrastorms/Dropped-Patches)
@@ -504,6 +514,13 @@ Web version:
   <summary>Aunali321</summary>
 
 [Patches](https://github.com/Aunali321/ReVancedExperiments) - [GPL-3.0](https://github.com/Aunali321/ReVancedExperiments/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>scrazzz</summary>
+
+[Patches](https://github.com/scrazzz/my-revanced-patches) - [GPL-3.0](https://github.com/scrazzz/my-revanced-patches/blob/main/LICENSE)
 
 </details>
 

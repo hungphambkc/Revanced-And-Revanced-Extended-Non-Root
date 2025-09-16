@@ -25,6 +25,7 @@ on:
           - 'Revanced Extended Android 6,7'
           - 'Revanced Extended Android 5'
           - 'BiliRoamingM'
+          - 'Scrazzz Patches'
           - 'Dropped Patches - indrastorms'
           - 'Revanced Experiments'
   workflow_call:
@@ -42,7 +43,7 @@ jobs:
         run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -65,7 +66,7 @@ jobs:
         run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -88,7 +89,7 @@ jobs:
       options: --user root
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Install library
@@ -114,9 +115,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: Cache_anddea_stable
           path: ./release
@@ -131,7 +132,7 @@ jobs:
       options: --user root
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Install library
@@ -157,9 +158,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: Cache_anddea_beta
           path: ./release
@@ -174,7 +175,7 @@ jobs:
       options: --user root
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Install library
@@ -200,9 +201,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: Cache_rve
           path: ./release
@@ -217,7 +218,7 @@ jobs:
       options: --user root
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Install library
@@ -243,9 +244,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: Cache_rve_beta
           path: ./release
@@ -257,7 +258,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -277,7 +278,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -297,7 +298,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -317,7 +318,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -337,7 +338,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -351,13 +352,33 @@ jobs:
         id: release-BiliRoamingM
         if: steps.check-gh-BiliRoamingM.outputs.internet_error == '0'
         uses: ./.github/actions/release
+  patch_scrazzz_Patches:
+    name: Scrazzz Patches Revanced
+    if: ${{ github.event.inputs.org == 'Scrazzz Patches' || inputs.org == 'Scrazzz Patches' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-scrazzz-patches
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-scrazzz-patches
+        if: steps.check-gh-scrazzz-patches.outputs.internet_error == '0'
+        run: bash src/build/scrazzz-revanced.sh
+      - name: Releasing APK files
+        id: release-scrazzz-patches
+        if: steps.check-gh-scrazzz-patches.outputs.internet_error == '0'
+        uses: ./.github/actions/release
   patch_Dropped_Patches:
     name: Dropped Patches Revanced - indrastorms
     if: ${{ github.event.inputs.org == 'Dropped Patches - indrastorms' || inputs.org == 'Dropped Patches - indrastorms' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -377,7 +398,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
