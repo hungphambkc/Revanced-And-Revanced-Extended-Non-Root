@@ -35,14 +35,12 @@ revanced_dl(){
 	# Patch Messenger:
 	# Arm64-v8a
 	get_patches_key "messenger"
-	lock_version="1"
-	get_apk "com.facebook.orca" "messenger-arm64-v8a-beta" "messenger" "facebook-2/messenger/facebook-messenger" "arm64-v8a" "nodpi"
+ 	get_apkpure "com.facebook.orca" "messenger-arm64-v8a-beta" "facebook-messenger/com.facebook.orca"
 	patch "messenger-arm64-v8a-beta" "revanced"
 	# Patch Facebook:
 	# Arm64-v8a
 	get_patches_key "facebook"
-	version="490.0.0.63.82" #Force this version because only patch in this version
-	get_apk "com.facebook.katana" "facebook-arm64-v8a-beta" "facebook" "facebook-2/facebook/facebook" "arm64-v8a" "nodpi" "Android 11+"
+	get_apkpure "com.facebook.katana" "facebook-arm64-v8a-beta" "facebook/com.facebook.katana"
 	patch "facebook-arm64-v8a-beta" "revanced"
 }
 3() {
@@ -86,7 +84,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch Pixiv:
 	get_patches_key "pixiv"
-	get_apk "jp.pxv.android" "pixiv-beta" "pixiv" "pixiv-inc/pixiv/pixiv"
+	get_apkpure "jp.pxv.android" "pixiv-beta" "pixiv/jp.pxv.android"
 	patch "pixiv-beta" "revanced"
 	# Patch Twitch:
 	get_patches_key "twitch"
@@ -192,11 +190,36 @@ revanced_dl(){
 12() {
 	revanced_dl
 	# Patch Spotjfy Arm64-v8a
-	get_patches_key "Spotjfy-revanced"
 	j="i"
- 	version="9.0.64.107" #https://github.com/ReVanced/revanced-patches/issues/5537#issuecomment-3134402120
+	get_patches_key "Spotjfy-revanced"
 	get_apkpure "com.spot"$j"fy.music" "spotjfy-beta-arm64-v8a" "spot"$j"fy-music-and-podcasts-for-android/com.spot"$j"fy.music"
 	patch "spotjfy-beta-arm64-v8a" "revanced"
+	# Patch Proton mail
+	get_patches_key "protonmail-revanced"
+	get_apk "ch.protonmail.android" "protonmail-beta" "protonmail-encrypted-email" "proton-technologies-ag/protonmail-encrypted-email/proton-mail-encrypted-email"
+	patch "protonmail-beta" "revanced"
+}
+13() {
+	revanced_dl
+	# Patch Threads
+	get_patches_key "Threads-revanced"
+	get_apkpure "com.instagram.barcelona" "threads-beta-arm64-v8a" "threads/com.instagram.barcelona" "Bundle"
+	patch "threads-beta-arm64-v8a" "revanced"
+	# Patch Prime Video
+	get_patches_key "Prime-Video-revanced"
+	version="3.0.412"
+	get_apk " com.amazon.avod.thirdpartyclient" "prime-video-beta-arm64-v8a" "amazon-prime-video" "amazon-mobile-llc/amazon-prime-video/amazon-prime-video" "arm64-v8a"
+	patch "prime-video-beta-arm64-v8a" "revanced"
+}
+14() {
+	revanced_dl
+	# Patch Crunchyroll
+	get_patches_key "Crunchyroll-revanced"
+	url="https://crunchyroll.en.uptodown.com/android/download/1109023537-x" #Use uptodown because apkmirror always ask pass Cloudflare on this app
+	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
+	req "$url" "crunchyroll-beta"
+	split_editor "crunchyroll-beta" "crunchyroll-beta"
+	patch "crunchyroll-beta" "revanced"
 }
 case "$1" in
     1)
@@ -234,5 +257,11 @@ case "$1" in
         ;;
     12)
         12
+        ;;
+    13)
+        13
+        ;;
+    14)
+        14
         ;;
 esac
