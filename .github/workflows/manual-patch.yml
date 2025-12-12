@@ -45,7 +45,7 @@ jobs:
         run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -68,7 +68,7 @@ jobs:
         run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -110,11 +110,11 @@ jobs:
     if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || inputs.org == 'RVE-anddea-stable' }}
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:20.04
+      image: ubuntu:24.04
       options: --user root
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Install library
@@ -140,9 +140,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
       - name: Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: Cache_anddea_stable
           path: ./release
@@ -153,11 +153,11 @@ jobs:
     if: ${{ github.event.inputs.org == 'RVE-anddea-beta' || inputs.org == 'RVE-anddea-beta' }}
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:20.04
+      image: ubuntu:24.04
       options: --user root
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Install library
@@ -183,9 +183,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
       - name: Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: Cache_anddea_beta
           path: ./release
@@ -196,11 +196,11 @@ jobs:
     if: ${{ github.event.inputs.org == 'Revanced Extended' || inputs.org == 'Revanced Extended' }}
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:20.04
+      image: ubuntu:24.04
       options: --user root
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Install library
@@ -226,9 +226,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
       - name: Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: Cache_rve
           path: ./release
@@ -239,11 +239,11 @@ jobs:
     if: ${{ github.event.inputs.org == 'Revanced Extended Beta' || inputs.org == 'Revanced Extended Beta' }}
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:20.04
+      image: ubuntu:24.04
       options: --user root
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Install library
@@ -269,9 +269,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
       - name: Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: Cache_rve_beta
           path: ./release
@@ -303,7 +303,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -323,7 +323,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -343,7 +343,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -363,7 +363,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -383,7 +383,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -403,7 +403,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -423,7 +423,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -443,7 +443,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
