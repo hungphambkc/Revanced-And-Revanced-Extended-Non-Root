@@ -129,7 +129,7 @@ jobs:
         if: steps.check-gh-rve-anddea-stable.outputs.internet_error == '0'
         run: bash src/build/Anddea-Revanced-Extended.sh
       - name: Cache
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Cache_anddea_stable
           path: |
@@ -142,7 +142,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Cache
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: Cache_anddea_stable
           path: ./release
@@ -172,7 +172,7 @@ jobs:
         if: steps.check-gh-rve-anddea-beta.outputs.internet_error == '0'
         run: bash src/build/Anddea-Revanced-Extended-Beta.sh
       - name: Cache
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Cache_anddea_beta
           path: |
@@ -185,7 +185,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Cache
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: Cache_anddea_beta
           path: ./release
@@ -215,7 +215,7 @@ jobs:
         if: steps.check-gh-rve.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended.sh
       - name: Cache
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Cache_rve
           path: |
@@ -228,7 +228,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Cache
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: Cache_rve
           path: ./release
@@ -258,7 +258,7 @@ jobs:
         if: steps.check-gh-rve-beta.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Beta.sh
       - name: Cache
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Cache_rve_beta
           path: |
@@ -271,7 +271,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Cache
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: Cache_rve_beta
           path: ./release
