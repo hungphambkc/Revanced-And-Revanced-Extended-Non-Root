@@ -1,4 +1,3 @@
-![](../main/docs/image/Banner.png#center)
 
 <h4 align="center">
 They are open-source scripts for patching various apps like YouTube, YouTube Music... However, they are very difficult to use for most users. That's why I created this repository to provide an easier way.
@@ -67,6 +66,29 @@ Download
 | ----------------------------------------------------------------------------------  | ------------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-revanced.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-revanced.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-revanced.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-revanced.apk) |
+
+</details>
+
+### [LisoUseInAIKyrios Patch (Revanced fork):](https://github.com/LisoUseInAIKyrios/revanced-patches)
+
+[All Architectures](../../releases/download/all/youtube-revanced-LisoUseInAIKyrios.apk)
+
+[Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-LisoUseInAIKyrios.apk)
+
+[Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced-LisoUseInAIKyrios.apk)
+
+[x86](../../releases/download/all/youtube-x86-revanced-LisoUseInAIKyrios.apk)
+
+[x86_64](../../releases/download/all/youtube-x86_64-revanced-LisoUseInAIKyrios.apk)
+
+<details>
+  <summary>Lite version</summary>
+
+**A lite version is a version with unnecessary things removed. For example, it might only have an English interface and remove unused screen DPI from split APKs**
+
+[Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-revanced-LisoUseInAIKyrios.apk)
+
+[Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-revanced-LisoUseInAIKyrios.apk)
 
 </details>
 
@@ -153,6 +175,16 @@ Download
 | [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced.apk) |
 | [x86](../../releases/download/all/youtube-music-x86-revanced.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-revanced.apk)                 |
 | [x86_64](../../releases/download/all/youtube-music-x86_64-revanced.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-revanced.apk)           |
+
+### [LisoUseInAIKyrios Patch (Revanced fork):](https://github.com/LisoUseInAIKyrios/revanced-patches)
+
+[Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced-LisoUseInAIKyrios.apk)
+
+[Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced-LisoUseInAIKyrios.apk)
+
+[x86](../../releases/download/all/youtube-music-x86-revanced-LisoUseInAIKyrios.apk)
+
+[x86_64](../../releases/download/all/youtube-music-x86_64-revanced-LisoUseInAIKyrios.apk)
 
 ### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 
@@ -305,6 +337,12 @@ Web version:
 | [All Architectures](../../releases/download/all/reddit-revanced-extended.apk)   | [All Architectures](../../releases/download/all/reddit-beta-revanced-extended.apk)   |
 | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced-extended.apk) | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-beta-revanced-extended.apk) |
 
+### [Revanced Extended Arsclib:](https://github.com/inotia00/revanced-patches-arsclib/)
+
+[All Architectures](../../releases/download/all/reddit-revanced-extended-arsclib.apk)
+
+[Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced-extended-arsclib.apk)
+
 ---
 
 [![Lightroom](https://img.shields.io/badge/Adobe%20Lightroom-31A8FF.svg?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white)](https://play.google.com/store/apps/details?id=com.adobe.lrmobile)
@@ -429,6 +467,16 @@ Web version:
 
 ---
 
+### [![Viber](https://img.shields.io/badge/Viber-8B66A9?style=for-the-badge&logo=viber&logoColor=white)](https://play.google.com/store/apps/details?id=com.viber.voip)
+
+### [Revanced:](https://github.com/revanced/revanced-patches)
+
+| Stable version                                                        | Beta version                                                               |
+| --------------------------------------------------------------------- | -------------------------------------------------------------------------- | 
+| [All Architectures](../../releases/download/all/viber-revanced.apk)   | [All Architectures](../../releases/download/all/viber-beta-revanced.apk)   |
+
+---
+
 [![Crunchyroll](https://img.shields.io/badge/Crunchyroll-F47521?style=for-the-badge&logo=crunchyroll&logoColor=white)](https://play.google.com/store/apps/details?id=com.crunchyroll.crunchyroid)
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
@@ -471,6 +519,22 @@ Web version:
 
 ---
 
+<h4 align="center">
+Apps below not based on Revanced, but project still open-source.
+</h4>
+
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://play.google.com/store/apps/details?id=com.instagram.android)
+
+### [Instafel:](https://github.com/mamiiblt/instafel)
+
+👉 [Offical author download link](https://github.com/mamiiblt/instafel/releases/latest)
+
+[Arm64-v8a](../../releases/download/all/instagram-instafel.apk )
+
+[Cloned-Arm64-v8a](../../releases/download/all/instagram-clone-instafel.apk )
+
+Cloned version has a different package name than the original app, so you can install both the original and the modified app at the same time.
+
 ### ⚠️ Library, resources using in this repository:
 
 <details>
@@ -491,9 +555,13 @@ Web version:
 
 [Patches](https://github.com/inotia00/revanced-patches) - [GPL-3.0](https://github.com/inotia00/revanced-patches/blob/revanced-extended/LICENSE)
 
+[Patches arsclib](https://github.com/inotia00/revanced-patches-arsclib) - [GPL-3.0](https://github.com/inotia00/revanced-patches-arsclib/blob/arsclib-old/LICENSE)
+
 [Integrations](https://github.com/inotia00/revanced-integrations) - [GPL-3.0](https://github.com/inotia00/revanced-integrations/blob/main/LICENSE)
 
 [CLI](https://github.com/inotia00/revanced-cli) - [GPL-3.0](https://github.com/inotia00/revanced-cli/blob/main/LICENSE)
+
+[CLI arsclib](https://github.com/inotia00/revanced-cli-arsclib) - [GPL-3.0](https://github.com/inotia00/revanced-cli-arsclib/blob/arsclib-old/LICENSE)
 
 </details>
 
@@ -505,6 +573,15 @@ Web version:
 [Integrations](https://github.com/anddea/revanced-integrations) - [GPL-3.0](https://github.com/anddea/revanced-integrations/blob/main/LICENSE)
 
 </details>
+
+</details>
+
+<details>
+  <summary>LisoUseInAIKyrios</summary>
+
+[Patches](https://github.com/LisoUseInAIKyrios/revanced-patches) - [GPL-3.0](https://github.com/LisoUseInAIKyrios/revanced-patches/blob/main/LICENSE)
+
+[CLI](https://github.com/LisoUseInAIKyrios/revanced-cli) - [GPL-3.0](https://github.com/LisoUseInAIKyrios/revanced-cli/blob/main/LICENSE)
 
 </details>
 
@@ -560,6 +637,13 @@ Web version:
   <summary>scrazzz</summary>
 
 [Patches](https://github.com/scrazzz/my-revanced-patches) - [GPL-3.0](https://github.com/scrazzz/my-revanced-patches/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>mamiiblt</summary>
+
+[Patches](https://github.com/mamiiblt/instafel) - [MIT](https://github.com/mamiiblt/instafel/blob/main/LICENSE)
 
 </details>
 

@@ -1,4 +1,4 @@
-name: Manual Patch
+name: 1. Manual Patch
 permissions: write-all
 env:
   repository: ${{ github.repository }}
@@ -18,6 +18,8 @@ on:
           - 'Revanced Beta'
           - 'Revanced Extended'
           - 'Revanced Extended Beta'
+          - 'Revanced Extended Arsclib'
+          - 'Revanced LisoUseInAIKyrios'
           - 'RVE-anddea-stable'
           - 'RVE-anddea-beta'
           - 'Twitter Piko Stable'
@@ -80,6 +82,29 @@ jobs:
         id: release-rvb
         if: steps.check-gh-rvb.outputs.internet_error == '0'
         uses: ./.github/actions/release
+  patch_rv_liso:
+    name: Patch Revanced LisoUseInAIKyrios
+    if: ${{ github.event.inputs.org == 'Revanced LisoUseInAIKyrios' || inputs.org == 'Revanced LisoUseInAIKyrios' }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        run: [1, 2, 3]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-rv-liso
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-rv-liso
+        if: steps.check-gh-rv-liso.outputs.internet_error == '0'
+        run: bash src/build/LisoUseInAIKyrios.sh ${{ matrix.run }}
+      - name: Releasing APK files
+        id: release-rv-liso
+        if: steps.check-gh-rv-liso.outputs.internet_error == '0'
+        uses: ./.github/actions/release
   patch_rve_anddea_stable:
     name: Patch RVX Anddea Stable
     if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || inputs.org == 'RVE-anddea-stable' }}
@@ -104,7 +129,7 @@ jobs:
         if: steps.check-gh-rve-anddea-stable.outputs.internet_error == '0'
         run: bash src/build/Anddea-Revanced-Extended.sh
       - name: Cache
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Cache_anddea_stable
           path: |
@@ -117,7 +142,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Cache
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: Cache_anddea_stable
           path: ./release
@@ -147,7 +172,7 @@ jobs:
         if: steps.check-gh-rve-anddea-beta.outputs.internet_error == '0'
         run: bash src/build/Anddea-Revanced-Extended-Beta.sh
       - name: Cache
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Cache_anddea_beta
           path: |
@@ -160,7 +185,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Cache
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: Cache_anddea_beta
           path: ./release
@@ -190,7 +215,7 @@ jobs:
         if: steps.check-gh-rve.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended.sh
       - name: Cache
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Cache_rve
           path: |
@@ -203,7 +228,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Cache
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: Cache_rve
           path: ./release
@@ -233,7 +258,7 @@ jobs:
         if: steps.check-gh-rve-beta.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Beta.sh
       - name: Cache
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Cache_rve_beta
           path: |
@@ -246,11 +271,31 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Cache
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: Cache_rve_beta
           path: ./release
       - name: Releasing APK files
+        uses: ./.github/actions/release
+  patch_rve_arsclib:
+    name: Patch Revanced Extended Arsclib
+    if: ${{ github.event.inputs.org == 'Revanced Extended Arsclib' || inputs.org == 'Revanced Extended Arsclib' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-rve-arsclib
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-rve-arsclib
+        if: steps.check-gh-rve-arsclib.outputs.internet_error == '0'
+        run: bash src/build/Revanced-Extended-Arsclib.sh
+      - name: Releasing APK files
+        id: release-rve-arsclib
+        if: steps.check-gh-rve-arsclib.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable

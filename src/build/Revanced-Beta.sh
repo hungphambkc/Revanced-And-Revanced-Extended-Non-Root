@@ -52,17 +52,14 @@ revanced_dl(){
 	patch "gg-photos-arm64-v8a-beta" "revanced"
 	# Armeabi-v7a
 	get_patches_key "gg-photos"
- 	version="7.32.0.765953717"
 	get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a-beta" "photos" "google-inc/photos/google-photos" "armeabi-v7a" "nodpi"
 	patch "gg-photos-armeabi-v7a-beta" "revanced"
 	# x86
 	get_patches_key "gg-photos"
- 	version="7.32.0.765953717"
 	get_apk "com.google.android.apps.photos" "gg-photos-x86-beta" "photos" "google-inc/photos/google-photos" "x86" "nodpi"
 	patch "gg-photos-x86-beta" "revanced"
 	# x86_64
 	get_patches_key "gg-photos"
- 	version="7.32.0.765953717"
 	get_apk "com.google.android.apps.photos" "gg-photos-x86_64-beta" "photos" "google-inc/photos/google-photos" "x86_64" "nodpi"
 	patch "gg-photos-x86_64-beta" "revanced"
 }
@@ -100,7 +97,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch Tumblr:
 	get_patches_key "tumblr"
-	get_apk "com.tumblr" "tumblr-beta" "tumblr" "tumblr-inc/tumblr/tumblr-fandom-art-chaos" "Bundle_extract"
+	get_apk "com.tumblr" "tumblr-beta" "tumblr" "tumblr-inc/tumblr/tumblr-social-media-art" "Bundle_extract"
 	split_editor "tumblr-beta" "tumblr-beta"
 	patch "tumblr-beta" "revanced"
 	# Patch Tumblr Arm64-v8a:
@@ -196,7 +193,7 @@ revanced_dl(){
 	patch "spotjfy-beta-arm64-v8a" "revanced"
 	# Patch Proton mail
 	get_patches_key "protonmail-revanced"
-	get_apk "ch.protonmail.android" "protonmail-beta" "protonmail-encrypted-email" "proton-technologies-ag/protonmail-encrypted-email/proton-mail-encrypted-email"
+	get_apkpure "ch.protonmail.android" "protonmail-beta" "proton-mail-encrypted-email/ch.protonmail.android"
 	patch "protonmail-beta" "revanced"
 }
 13() {
@@ -215,11 +212,15 @@ revanced_dl(){
 	revanced_dl
 	# Patch Crunchyroll
 	get_patches_key "Crunchyroll-revanced"
-	url="https://crunchyroll.en.uptodown.com/android/download/1109023537-x" #Use uptodown because apkmirror always ask pass Cloudflare on this app
+	url="https://crunchyroll.en.uptodown.com/android/download/1123284824-x" #Use uptodown because apkmirror always ask pass Cloudflare on this app
 	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
 	req "$url" "crunchyroll-beta"
 	split_editor "crunchyroll-beta" "crunchyroll-beta"
 	patch "crunchyroll-beta" "revanced"
+	# Patch Viber
+	get_patches_key "Viber-revanced"
+	get_apk "com.viber.voip" "viber-beta" "viber" "viber-media-s-a-r-l/viber/rakuten-viber-messenger"
+	patch "viber-beta" "revanced"
 }
 case "$1" in
     1)
